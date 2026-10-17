@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="respone.css">
+
+    <title>voice</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-shadow: border-box;
+    }
+
+    body {
+        background-color: cornflowerblue;
+        width: 100%;
+        ;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    textarea {
+        margin-top: 170px;
+        padding: 15px 20px;
+        font-family: sans-serif;
+        border: 0;
+        border-radius: 10px;
+        text-align: justify;
+        box-shadow: inset 2px 3px 5px rgb(126, 124, 124);
+        outline: none;
+        /* margin-right: 300px; */
+        overflow: hidden;
+
+    }
+
+    button {
+        border: 0;
+        outline: 0;
+        border-radius: 8px;
+        background-color: orange;
+        width: 60px;
+        height: 40px;
+
+    }
+
+    #voicetext {
+        color: red;
+    }
+</style>
+
+<body>
+    <div>
+        <textarea rows="5" cols="50" placeholder="your voice message in here..." id="voicetext"></textarea>
+
+        <button class="btn" onclick=voice()>voice</button>
+    </div>
+    <script>
+
+        function voice() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+            recognition.onresult = function (event) {
+                console.log(event);
+                document.getElementById("voicetext").value = event.results.transcript;
+            };
+            recognition.start();
+
+        }
+
+    </script>
+</body>
+
+</html>

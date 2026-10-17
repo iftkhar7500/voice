@@ -1,0 +1,70 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cornflowerblue;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+textarea {
+    margin-top: 0;
+    padding: 15px 20px;
+    font-family: sans-serif;
+    border: 0;
+    border-radius: 10px;
+    text-align: justify;
+    box-shadow: inset 2px 3px 5px rgb(126, 124, 124);
+    outline: none;
+    overflow: auto;
+
+    width: 100%;
+    max-width: 500px;
+    min-height: 200px;
+    resize: vertical;
+}
+
+button {
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+    background-color: orange;
+    width: 80px;
+    min-height: 40px;
+    cursor: pointer;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        min-height: 180px;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 120px;
+        min-height: 44px;
+        font-size: 16px;
+    }
+
+    #voicetext {
+        color: red;
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+}
